@@ -24,9 +24,9 @@ You are free to use any tools of your choosing, but we recommend the following:
 
 <h3>Tool selection</h3>
 
-- VM instance has been created in GCP with the access through the SSH connection
-- Document AI by Google Cloud is being used here as a tool for processing unstructured data to analyze and extract entities
-- General form processor is used to extract form elements (this processor has public access)
+- VM instance has been created in GCP with the access through the SSH connection.
+- Document AI by Google Cloud is being used here as a tool for processing unstructured data to analyze and extract entities.
+- General form processor is used to extract form elements (this processor has public access).
 
 
 Below are the steps to be executed before running the analysis task on the processor.
@@ -52,9 +52,7 @@ In the SSH session create an environment variable to contain the Document AI pro
 You must replace the placeholder for [your processor id]:
 
 ```
-export PROCESSOR_ID=[your processor id]
 export PROCESSOR_ID=27926b3449bc9ea8
-export PROCESSOR_ID=ff89fff9a3e82976
 ```
 
 <h2>3. Authenticate API requests</h2>
@@ -127,9 +125,10 @@ https://cloud.google.com/document-ai/docs/handle-response#python_2
 
 _Specialized Processors - Dedicated models for the world's most common document types._
 
-Specialized processros could be used to increase the accuracy. For example, 1003 Parser extracts over 50 fields from Fannie Mae Form 1003 (URLA). The 1003 Form is Fannie Mae's form number for the Uniform Residential Loan Application (URLA), a borrower’s application for a mortgage. Freddie Mac's form number is Form 65; both refer to the same form. 
+Specialized processros could be used to increase the accuracy. 
+For example, 1003 Parser extracts over 50 fields from Fannie Mae Form 1003 (URLA). The 1003 Form is Fannie Mae's form number for the Uniform Residential Loan Application (URLA), a borrower’s application for a mortgage.
 
-(!) To use specialized Processors, GCP users shoud request private access
+(!) To use specialized Processors, GCP users shoud request private access.
 
 Demo tests have shown better accuracy for the same .pdf document. 
 https://cloud.google.com/solutions/lending-doc-ai

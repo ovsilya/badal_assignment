@@ -95,14 +95,14 @@ python3 -m pip install --upgrade google-cloud-documentai google-cloud-storage pr
 ```
 
 4.2 Run the Document AI Python code
-Call the synchronous_doc_ai.py python program with the parameters it requires:
 
-- download the sample form to your working directory
+- download the sample form to your working directory:
+
 ```
 gsutil cp gs://transfering_files/deed-of-trust_template_3pages.pdf .
 ```
 
-<h2>5. Running the parser</h2>
+- call the parsing_document.py python program with the parameters it requires:
 
 ```
 python3 parsing_document.py \

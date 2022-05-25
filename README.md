@@ -24,12 +24,12 @@ You are free to use any tools of your choosing, but we recommend the following:
 
 <h3>Tool selection</h3>
 
-- VM instance has been created in GCP with the access through the SSH connection.
-- Document AI by Google Cloud is being used here as a tool for processing unstructured data to analyze and extract entities.
-- General form processor is used to extract form elements (this processor has public access).
+- **VM instance** has been created in GCP with the access through the SSH connection.
+- **Document AI** by Google Cloud is used here as a tool for processing unstructured data to analyze and extract entities.
+- **General Form Processor** was created to extract form elements (this processor has public access).
 
 
-Below are the steps to be executed before running the analysis task on the processor.
+Below are the steps to be executed before running the analysis task on the General Form Processor.
 
 
 <h2>1. Enable the Cloud Document AI API</h2>

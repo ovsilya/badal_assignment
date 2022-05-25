@@ -122,7 +122,7 @@ The response to a processing request contains **a document object** that holds e
 
 [This page](https://cloud.google.com/document-ai/docs/handle-response#python_2) explains the layout of document object by providing sample documents and then mapping them to fields in the document object. It also provides Client Library code samples. 
 
-The output file badal_docAI.txt contains all text detected in the document as well as files names and corresponded values extracted by the processor. Information in the output .txt file is split by physical pages of the document. 
+The output file **badal_docAI.txt** contains all text data detected in the document as well as field names and corresponded values extracted by the Processor. Information in this file is grouped by physical pages of the test document. 
 
 <h2>Future inmprovements</h2>
 

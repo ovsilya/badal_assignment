@@ -21,6 +21,16 @@ You are free to use any tools of your choosing, but we recommend the following:
 - Any challenges or issues encountered during the process + recommendations for improvements in a production environment.
 _____________________________________________
 
+**Tool selection**
+
+- VM instance has been created in GCP with the access through the SSH connection
+- Document AI by Google Cloud is being used here as a tool for processing unstructured data to analyze and extract entities
+- General form processor is used to extract form elements (this processor has public access)
+
+
+Below are the steps to be executed before running the analysis task on the processor.
+
+
 **1. Enable the Cloud Document AI API**
 
 - In Google Cloud Console, on the Navigation menu (Navigation menu), click APIs & services > Library.
@@ -114,3 +124,16 @@ The response to a processing request contains a document object that holds every
 This page explains the layout of document object by providing sample documents and then mapping them to fields in the document object. It also provides Client Library code samples.
 
 https://cloud.google.com/document-ai/docs/handle-response#python_2
+
+_______________________
+
+**Future inmprovements**
+
+_Specialized Processors - Dedicated models for the world's most common document types._
+
+Specialized processros could be used to increase the accuracy. For example, 1003 Parser extracts over 50 fields from Fannie Mae Form 1003 (URLA). The 1003 Form is Fannie Mae's form number for the Uniform Residential Loan Application (URLA), a borrower’s application for a mortgage. Freddie Mac's form number is Form 65; both refer to the same form. 
+
+(!) To use specialized Processors, GCP users shoud request private access
+
+Demo tests have shown better accuracy for the same .pdf document. 
+https://cloud.google.com/solutions/lending-doc-ai

@@ -1,4 +1,4 @@
-**Problem Statement**
+<h1>Problem Statement</h1>
 
 We want to create a POC to accelerate the house purchasing process using GCP native ML services. A sample deed of trust document can be found here deed-of-trust_template.pdf. The objective of the task is to extract useful customer information such as lender name, lender address, trusty, etc.
 
@@ -19,9 +19,10 @@ You are free to use any tools of your choosing, but we recommend the following:
 - High level architecture and approach explanation
 - Code of notebooks used and any extra configurations that need to be provided if using APIs manually
 - Any challenges or issues encountered during the process + recommendations for improvements in a production environment.
-_____________________________________________
 
-**Tool selection**
+<h1>Solution</h1>
+
+<h3>Tool selection</h3>
 
 - VM instance has been created in GCP with the access through the SSH connection
 - Document AI by Google Cloud is being used here as a tool for processing unstructured data to analyze and extract entities
@@ -31,12 +32,12 @@ _____________________________________________
 Below are the steps to be executed before running the analysis task on the processor.
 
 
-**1. Enable the Cloud Document AI API**
+<h2>1. Enable the Cloud Document AI API</h2>
 
 - In Google Cloud Console, on the Navigation menu (Navigation menu), click APIs & services > Library.
 - Search for Cloud Document AI API, then click the Enable button to use the API in your Google Cloud project.
 
-**2. Create a general form processor**
+<h2>2. Create a general form processor</h2>
 
 Next you will create a Document AI processor using the Document AI Form Parser.
 - In the console, on the Navigation menu (Navigation menu), click Document AI > Overview.
@@ -56,7 +57,7 @@ export PROCESSOR_ID=27926b3449bc9ea8
 export PROCESSOR_ID=ff89fff9a3e82976
 ```
 
-**3. Authenticate API requests **
+<h2>3. Authenticate API requests</h2>
 - Set an environment variable with your Project ID:
 ```
 export PROJECT_ID=$(gcloud config get-value core/project)
@@ -86,7 +87,7 @@ gcloud iam service-accounts keys create key.json \
 export GOOGLE_APPLICATION_CREDENTIALS="$PWD/key.json"
 ```
 
-**4. Make a synchronous call to the Document AI API using the Python Document AI client libraries.**
+<h2>4. Make a synchronous call to the Document AI API using the Python Document AI client libraries.</h2>
 
 4.1 Configure VM Instance to use the Document AI Python client
 import the .pdf file into VM Instance
@@ -107,7 +108,8 @@ Call the synchronous_doc_ai.py python program with the parameters it requires:
 gsutil cp gs://transfering_files/deed-of-trust_template_3pages.pdf .
 ```
 
-**5. Running the parser:**
+<h2>5. Running the parser:</h2>
+
 ```
 python3 parsing_document.py \
 --project_id=$PROJECT_ID \
@@ -116,8 +118,7 @@ python3 parsing_document.py \
 --file_name=deed-of-trust_template_3pages.pdf | tee badal_docAI.txt
 ```
 
-
-**Handling the processing response**
+<h2>Handling the processing response</h2>
 
 The response to a processing request contains a document object that holds everything known about the processed document, including all of the structured information that Document AI was able to extract.
 
@@ -125,9 +126,8 @@ This page explains the layout of document object by providing sample documents a
 
 https://cloud.google.com/document-ai/docs/handle-response#python_2
 
-_______________________
 
-**Future inmprovements**
+<h2>Future inmprovements</h2>
 
 _Specialized Processors - Dedicated models for the world's most common document types._
 

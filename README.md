@@ -116,7 +116,7 @@ python3 parsing_document.py \
 
 The response to a processing request contains **a document object** that holds everything known about the processed document, including all of the structured information that **Document AI** was able to extract.
 
-This page explains the layout of document object by providing sample documents and then mapping them to fields in the document object. It also provides Client Library code samples. https://cloud.google.com/document-ai/docs/handle-response#python_2
+[This page](https://cloud.google.com/document-ai/docs/handle-response#python_2) explains the layout of document object by providing sample documents and then mapping them to fields in the document object. It also provides Client Library code samples. 
 
 
 <h2>Future inmprovements</h2>
@@ -124,7 +124,7 @@ This page explains the layout of document object by providing sample documents a
 _Specialized Processors - Dedicated models for the world's most common document types._
 
 Specialized processros could be used to increase the accuracy. 
-For example, 1003 Parser extracts over 50 fields from Fannie Mae Form 1003 (URLA). The 1003 Form is Fannie Mae's form number for the Uniform Residential Loan Application (URLA), a borrower’s application for a mortgage.
+For example, [**1003 Parser**](https://cloud.google.com/document-ai/docs/processors-list?hl=en_US#processor_1003-parser) extracts over 50 fields from Fannie Mae Form 1003 (URLA). The 1003 Form is Fannie Mae's form number for the Uniform Residential Loan Application (URLA), a borrower’s application for a mortgage.
 
 (!) To use specialized Processors, GCP users shoud request private access.
 

@@ -27,26 +27,30 @@ You are free to use any tools of your choosing, but we recommend the following:
 - **VM instance** has been created in GCP with the access through the SSH connection.
 - **Document AI** by Google Cloud is used here as a tool for processing unstructured data to analyze and extract entities.
 - **General Form Processor** was created to extract form elements (this processor has public access).
+- Sample pdf document has been reduced to **3-5 pages** in order to comply with the processor limitations (up to 5 pages per document)
+- The .pdf form has been populated with **random information** (Names, addresses, etc.) for further processing and information detection.
 
 
 Below are the steps to be executed before running the analysis task on the General Form Processor.
 
 
-<h2>1. Enable the Cloud Document AI API</h2>
+<h2>1. Enable Cloud Document AI API</h2>
 
 - In Google Cloud Console, on the Navigation menu (Navigation menu), click APIs & services > Library.
 - Search for Cloud Document AI API, then click the Enable button to use the API in your Google Cloud project.
 
-<h2>2. Create a general form processor</h2>
+<h2>2. Create General Form Processor</h2>
 
-Next you will create a Document AI processor using the Document AI Form Parser.
+Next, create a Document AI processor using the Document AI Form Parser:
 - In the console, on the Navigation menu (Navigation menu), click Document AI > Overview.
 - Click Create processor and select Form Parser, which is a type of general processor.
 - Specify the processor name as form-parser and select the region US (United States) from the list.
 - Click Create to create the general form-parser processor.
+
 ```
-us parser: 27926b3449bc9ea8
-eu parser: ff89fff9a3e82976
+us Form Parser: 27926b3449bc9ea8
+eu Form Parser: ff89fff9a3e82976
+(*) Specialized Processors are also available upon request and can be used for specific types of documents (mortgage forms, paystubs, tax slips, etc.)
 ```
 In the SSH session create an environment variable to contain the Document AI processor ID. 
 You must replace the placeholder for [your processor id]:
@@ -85,7 +89,7 @@ gcloud iam service-accounts keys create key.json \
 export GOOGLE_APPLICATION_CREDENTIALS="$PWD/key.json"
 ```
 
-<h2>4. Make a synchronous call to the Document AI API using the Python Document AI client libraries.</h2>
+<h2>4. Make a call to the Document AI API using the Python Document AI client libraries</h2>
 
 4.1 Configure VM Instance to use the Document AI Python client
 
@@ -118,6 +122,7 @@ The response to a processing request contains **a document object** that holds e
 
 [This page](https://cloud.google.com/document-ai/docs/handle-response#python_2) explains the layout of document object by providing sample documents and then mapping them to fields in the document object. It also provides Client Library code samples. 
 
+The output file badal_docAI.txt contains all text detected in the document as well as files names and corresponded values extracted by the processor. Information in the output .txt file is split by physical pages of the document. 
 
 <h2>Future inmprovements</h2>
 

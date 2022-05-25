@@ -114,11 +114,9 @@ python3 parsing_document.py \
 
 <h2>Handling the processing response</h2>
 
-The response to a processing request contains a document object that holds everything known about the processed document, including all of the structured information that Document AI was able to extract.
+The response to a processing request contains **a document object** that holds everything known about the processed document, including all of the structured information that **Document AI** was able to extract.
 
-This page explains the layout of document object by providing sample documents and then mapping them to fields in the document object. It also provides Client Library code samples.
-
-https://cloud.google.com/document-ai/docs/handle-response#python_2
+This page explains the layout of document object by providing sample documents and then mapping them to fields in the document object. It also provides Client Library code samples. https://cloud.google.com/document-ai/docs/handle-response#python_2
 
 
 <h2>Future inmprovements</h2>

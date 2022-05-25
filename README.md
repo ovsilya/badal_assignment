@@ -1,3 +1,26 @@
+**Problem Statement**
+
+We want to create a POC to accelerate the house purchasing process using GCP native ML services. A sample deed of trust document can be found here deed-of-trust_template.pdf. The objective of the task is to extract useful customer information such as lender name, lender address, trusty, etc.
+
+**What we except**
+
+A working solution for an end to end machine learning pipeline to extract lender information from the provided document. We do not expect a perfect solution, just want to see how you approach the problem and test basic coding skills.
+
+**Technologies**
+
+You are free to use any tools of your choosing, but we recommend the following:
+- DocAI
+- VertexAI
+- Cohere.ai
+- Any python machine learning library if you are new to GCP, or find need to get around a limitation in one of the GCP services
+
+**Deliverables**
+
+- High level architecture and approach explanation
+- Code of notebooks used and any extra configurations that need to be provided if using APIs manually
+- Any challenges or issues encountered during the process + recommendations for improvements in a production environment.
+_____________________________________________
+
 **1. Enable the Cloud Document AI API**
 
 - In Google Cloud Console, on the Navigation menu (Navigation menu), click APIs & services > Library.

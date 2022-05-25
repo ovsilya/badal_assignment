@@ -84,7 +84,7 @@ print("Text: \n{}\n".format(document.text))
 
 print("Form data detected:\n")
 
-# For each page fetch each form field and display fieldname, value and confidence scores
+# For each page fetch each form field and display fieldname and value
 for page in document_pages:
 
     print("Page Number:{}".format(page.page_number))
@@ -92,15 +92,10 @@ for page in document_pages:
     for form_field in page.form_fields:
 
         fieldName=get_text(form_field.field_name,document)
-        nameConfidence = round(form_field.field_name.confidence,4)
-
         fieldValue = get_text(form_field.field_value,document)
-        valueConfidence = round(form_field.field_value.confidence,4)
 
         print("fieldName:", fieldName)
         print("fieldValue:", fieldValue)
-        print("nameConfidence:", str(nameConfidence))
-        print("valueConfidence:", str(valueConfidence))
 
         # print(fieldName+fieldValue +"  (Confidence Scores: (Name) "+str(nameConfidence)+", (Value) "+str(valueConfidence)+")\n")
 

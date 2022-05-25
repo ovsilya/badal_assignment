@@ -90,10 +90,6 @@ export GOOGLE_APPLICATION_CREDENTIALS="$PWD/key.json"
 <h2>4. Make a synchronous call to the Document AI API using the Python Document AI client libraries.</h2>
 
 4.1 Configure VM Instance to use the Document AI Python client
-import the .pdf file into VM Instance
-```
-gsutil cp gs://cloud-training/gsp924/synchronous_doc_ai.py .
-```
 
 - install the Python client libraries required for Document AI and the other libraries
 ```
@@ -108,7 +104,7 @@ Call the synchronous_doc_ai.py python program with the parameters it requires:
 gsutil cp gs://transfering_files/deed-of-trust_template_3pages.pdf .
 ```
 
-<h2>5. Running the parser:</h2>
+<h2>5. Running the parser</h2>
 
 ```
 python3 parsing_document.py \
